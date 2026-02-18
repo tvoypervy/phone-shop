@@ -91,8 +91,8 @@ export const ProductInfoPage: React.FC = () => {
     }
 
     Promise.all([
-      fetch(`/phone-shop/api/${category}.json`).then(res => res.json()),
-      fetch(`/phone-shop/api/products.json`).then(res => res.json()),
+      fetch('/phone-shop/api/' + category + '.json').then(res => res.json()),
+      fetch('/phone-shop/api/products.json').then(res => res.json()),
     ])
       .then(([categoryData, productsData]) => {
         const foundedItem = categoryData.find(
