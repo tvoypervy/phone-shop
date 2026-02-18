@@ -47,7 +47,7 @@ export const ProductsPage = () => {
 
     setIsLoading(true);
 
-    fetch(`${import.meta.env.BASE_URL}api/products.json`)
+    fetch('/phone-shop/api/products.json')
       .then(res => res.json())
       .then((data: ProductsType[]) => {
         const filteredProducts = data.filter(
