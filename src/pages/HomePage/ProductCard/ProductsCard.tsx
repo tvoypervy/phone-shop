@@ -20,8 +20,8 @@ export const ProductCard: React.FC<Props> = ({ product, showDiscount }) => {
   const modelId = product.itemId;
   const category = product.category;
   const id = product.id;
-  const priceRegular = `$${product.fullPrice}`;
-  const priceDiscount = `$${product.price}`;
+  const priceRegular = `$${product.fullPrice || 0}`;
+  const priceDiscount = `$${product.price || 0}`;
 
   let ram = product.ram;
 
