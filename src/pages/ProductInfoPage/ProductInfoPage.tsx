@@ -91,8 +91,8 @@ export const ProductInfoPage: React.FC = () => {
     }
 
     Promise.all([
-      fetch(`api/${category}.json`).then(res => res.json()),
-      fetch(`api/products.json`).then(res => res.json()),
+      fetch(`/phone-shop/api/${category}.json`).then(res => res.json()),
+      fetch(`/phone-shop/api/products.json`).then(res => res.json()),
     ])
       .then(([categoryData, productsData]) => {
         const foundedItem = categoryData.find(
@@ -270,15 +270,15 @@ export const ProductInfoPage: React.FC = () => {
               {modelYear < 2021 ? (
                 <>
                   <div className="productInfo__priceCurrent">
-                    ${foundProduct.price}
+                    ${foundProduct.price || 0}
                   </div>
                   <div className="productInfo__priceOld">
-                    ${foundProduct.fullPrice}
+                    ${foundProduct.fullPrice || 0}
                   </div>
                 </>
               ) : (
                 <div className="productInfo__priceCurrent">
-                  ${foundProduct.fullPrice}
+                  ${foundProduct.fullPrice || 0}
                 </div>
               )}
             </div>
